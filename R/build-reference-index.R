@@ -51,7 +51,7 @@ data_reference_index_section <- function(section, pkg) {
     aliases = purrr::map2(
       section_topics$funs,
       section_topics$name,
-      ~ if (length(.x) > 0) .x else .y
+      ~ if (length(.x) > 0) unique(.x) else .y
     ),
     title = section_topics$title,
     icon = find_icons(section_topics$alias, path(pkg$src_path, "icons"))

@@ -40,12 +40,10 @@ short_name <- function(name, type, signature) {
     name <- paste0("`", name, "`")
   }
 
-  if (type == "data") {
-    name
-  } else if (type == "fun") {
+  if (type == "fun") {
     paste0(name, "()")
   } else {
-    paste0(name, "(", paste0("<i>&lt;", signature, "&gt;</i>", collapse = ","), ")")
+    name
   }
 }
 
