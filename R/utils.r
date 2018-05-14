@@ -4,7 +4,7 @@ set_contains <- function(haystack, needles) {
 split_at_linebreaks <- function(text) {
   if (length(text) < 1)
     return(character())
-  trimws(strsplit(text, "\\n\\s*\\n")[[1]])
+  str_trim(strsplit(text, "\\n\\s*\\n")[[1]])
 }
 
 up_path <- function(depth) {
@@ -36,6 +36,25 @@ rstudio_save_all <- function() {
 }
 
 is_syntactic <- function(x) x == make.names(x)
+
+str_trim <- function(x) gsub("^\\s+|\\s+$", "", x)
+
+
+# devtools metadata -------------------------------------------------------
+
+devtools_loaded <- function(x) {
+  if (!x %in% loadedNamespaces()) {
+    return(FALSE)
+  }
+  ns <- .getNamespace(x)
+  env_has(ns, ".__DEVTOOLS__")
+}
+
+devtools_meta <- function(x) {
+  ns <- .getNamespace(x)
+  ns[[".__DEVTOOLS__"]]
+}
+
 
 # CLI ---------------------------------------------------------------------
 

@@ -25,6 +25,14 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+<!-- docsearch -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+<link href="../docsearch.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+
+
 <meta property="og:title" content="Function reference" />
 
 
@@ -36,11 +44,6 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-
-
-
-<!-- docsearch -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
 
@@ -57,7 +60,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">pkgdown</a>
-        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.1.0.9000</span>
+        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">1.0.0.9000</span>
       </span>
     </div>
 
@@ -112,7 +115,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/hadley/pkgdown">
+  <a href="https://github.com/r-lib/pkgdown">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -121,7 +124,7 @@
       
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
         </div>
       </form>
       
@@ -141,6 +144,7 @@
     <table class="ref-index">
 
     <colgroup>
+      
       <col class="alias" />
       <col class="title" />
     </colgroup>
@@ -153,49 +157,49 @@
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="init_site.html">init_site()</a></code> </p>
         </td>
         <td><p>Initialise the site</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="build_articles.html">build_articles()</a></code> <code><a href="build_articles.html">build_article()</a></code> </p>
         </td>
         <td><p>Build articles</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="build_home.html">build_home()</a></code> </p>
         </td>
         <td><p>Build home page</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="build_news.html">build_news()</a></code> </p>
         </td>
         <td><p>Build news section</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="build_reference.html">build_reference()</a></code> <code><a href="build_reference.html">build_reference_index()</a></code> </p>
         </td>
         <td><p>Build reference section</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="build_site.html">build_site()</a></code> </p>
         </td>
         <td><p>Build pkgdown website</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="build_tutorials.html">build_tutorials()</a></code> </p>
         </td>
         <td><p>Build tutorials</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="preview_site.html">preview_site()</a></code> </p>
         </td>
@@ -209,13 +213,13 @@
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="templates.html">template_navbar()</a></code> <code><a href="templates.html">template_reference()</a></code> <code><a href="templates.html">template_articles()</a></code> </p>
         </td>
         <td><p>Generate YAML templates</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="render_page.html">render_page()</a></code> <code><a href="render_page.html">data_template()</a></code> </p>
         </td>
@@ -229,25 +233,25 @@
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="autolink_html.html">autolink_html()</a></code> </p>
         </td>
         <td><p>Automatic link references and articles in an HTML package</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="clean_site.html">clean_site()</a></code> </p>
         </td>
         <td><p>Clean site</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="as_pkgdown.html">as_pkgdown()</a></code> </p>
         </td>
         <td><p>Generate pkgdown data structure</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="in_pkgdown.html">in_pkgdown()</a></code> </p>
         </td>
@@ -261,29 +265,35 @@
         </th>
       </tr>
       <tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="test-dont.html">test-dont</a></code> </p>
         </td>
         <td><p>Test case: don't</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="test-figures.html">test-figures</a></code> </p>
         </td>
         <td><p>Test case: figures</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="test-links.html">test-links</a></code> </p>
         </td>
         <td><p>Test case: links</p></td>
       </tr><tr>
-        <!--  -->
+        
         <td>
           <p><code><a href="test-lists.html">test-lists</a></code> </p>
         </td>
         <td><p>Test case: lists</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="test-params.html">test-params</a></code> </p>
+        </td>
+        <td><p>Test case: params</p></td>
       </tr>
     </tbody>
     </table>
@@ -317,10 +327,16 @@
 <script>
   docsearch({
     
+    
     apiKey: 'fbd8d79ed49f21fc9ca7b2cf601a3f5b',
     indexName: 'pkgdown',
     inputSelector: 'input#search-input.form-control',
-    debug: false // Set debug to true if you want to inspect the dropdown
+    transformData: function(hits) {
+      return hits.map(function (hit) {
+        hit.url = updateHitURL(hit);
+        return hit;
+      });
+    }
   });
 </script>
 

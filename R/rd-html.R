@@ -39,7 +39,7 @@ flatten_para <- function(x, ...) {
     split(groups) %>%
     purrr::map_lgl(any)
 
-  blocks[needs_p] <- paste0("<p>", trimws(blocks[needs_p]), "</p>")
+  blocks[needs_p] <- paste0("<p>", str_trim(blocks[needs_p]), "</p>")
 
   paste0(blocks, collapse = "")
 }
@@ -254,17 +254,18 @@ as_html.tag_tabular <- function(x, ...) {
 
   last <- rev(which(row_sep))[1] - 1L
   contents <- contents[seq_len(last)]
-  cell_grp <- cumsum(col_sep | row_sep)[seq_len(last)]
-  cells <- split(contents, cell_grp)
+  sep <- col_sep | row_sep
+  cell_grp <- cumsum(sep)[seq_len(last)]
+  cells <- split(contents[!sep], cell_grp[!sep])
 
   cell_contents <- vapply(cells, flatten_text, ...,
     FUN.VALUE = character(1), USE.NAMES = FALSE)
-  cell_contents <- paste0("<td>", cell_contents, "</td>\n")
+  cell_contents <- paste0("<td>", str_trim(cell_contents), "</td>")
   cell_contents <- matrix(cell_contents, ncol = length(align), byrow = TRUE)
 
   rows <- apply(cell_contents, 1, paste0, collapse = "")
 
-  paste0("<table>", paste0("<tr>", rows, "</tr>", collapse = ""), "</table>")
+  paste0("<table class='table'>\n", paste0("<tr>", rows, "</tr>\n", collapse = ""), "</table>\n")
 }
 
 
@@ -419,7 +420,7 @@ as_html.tag_dfn <-          tag_wrapper("<dfn>", "</dfn>")
 #' @export
 as_html.tag_cite <-         tag_wrapper("<cite>", "</cite>")
 #' @export
-as_html.tag_acroynm <-      tag_wrapper('<acronym>','</acronym>')
+as_html.tag_acronym <-      tag_wrapper('<acronym>','</acronym>')
 
 #' @export
 as_html.tag_out <- function(x, ...) flatten_text(x, ..., escape = FALSE)

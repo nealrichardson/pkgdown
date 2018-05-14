@@ -25,6 +25,14 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+<!-- docsearch -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+<link href="../docsearch.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+
+
 <meta property="og:title" content="Changelog" />
 
 
@@ -36,11 +44,6 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-
-
-
-<!-- docsearch -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
 
@@ -57,7 +60,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">pkgdown</a>
-        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.1.0.9000</span>
+        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">1.0.0.9000</span>
       </span>
     </div>
 
@@ -112,7 +115,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/hadley/pkgdown">
+  <a href="https://github.com/r-lib/pkgdown">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -121,7 +124,7 @@
       
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
         </div>
       </form>
       
@@ -136,12 +139,18 @@
   <div class="col-md-9 contents">
     <div class="page-header">
       <h1>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/hadley/pkgdown/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+      <small>Source: <a href='https://github.com/r-lib/pkgdown/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="pkgdown-0-1-0-9000" class="section level1">
+    <div id="pkgdown-1-0-0-9000" class="section level1">
 <h1 class="page-header">
-<a href="#pkgdown-0-1-0-9000" class="anchor"></a>pkgdown 0.1.0.9000</h1>
+<a href="#pkgdown-1-0-0-9000" class="anchor"></a>pkgdown 1.0.0.9000<small> Unreleased </small>
+</h1>
+</div>
+    <div id="pkgdown-1-0-0" class="section level1">
+<h1 class="page-header">
+<a href="#pkgdown-1-0-0" class="anchor"></a>pkgdown 1.0.0<small> 2018-05-03 </small>
+</h1>
 <ul>
 <li><p>Major refactoring of path handling. <code>build_</code> functions no longer take <code>path</code> or <code>depth</code> arguments. Instead, set the <code>destination</code> directory at the top level of <code>pkgdown.yml</code>.</p></li>
 <li><p>Similarly, <code><a href="../reference/build_news.html">build_news()</a></code> no longer takes a <code>one_page</code> argument; this should now be specified in the <code>_pkgdown.yml</code> instead. See the documentation for an example.</p></li>
@@ -153,7 +162,8 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-        <li><a href="#pkgdown-0-1-0-9000">0.1.0.9000</a></li>
+        <li><a href="#pkgdown-1-0-0-9000">1.0.0.9000</a></li>
+        <li><a href="#pkgdown-1-0-0">1.0.0</a></li>
       </ul>
     </div>
   </div>
@@ -177,10 +187,16 @@
 <script>
   docsearch({
     
+    
     apiKey: 'fbd8d79ed49f21fc9ca7b2cf601a3f5b',
     indexName: 'pkgdown',
     inputSelector: 'input#search-input.form-control',
-    debug: false // Set debug to true if you want to inspect the dropdown
+    transformData: function(hits) {
+      return hits.map(function (hit) {
+        hit.url = updateHitURL(hit);
+        return hit;
+      });
+    }
   });
 </script>
 

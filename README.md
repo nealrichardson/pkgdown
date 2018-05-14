@@ -18,11 +18,11 @@ latest version of pkgdown. Learn more in `vignette("pkgdown")` or
 
 ## Installation
 
-pkgdown is not currently available from CRAN, but you can install the
-development version from github with:
-
 ``` r
-# install.packages("devtools")
+# Install release version from CRAN
+install.packages("pkgdown")
+
+# Install development version from GitHub
 devtools::install_github("r-lib/pkgdown")
 ```
 
@@ -53,8 +53,8 @@ in the documentation. Alternatively, you can also use
 
 ## In the wild
 
-As at last count, pkgdown is used [by over 1300
-packages](https://github.com/search?utf8=✓&q=pkgdown.css+in%3Apath+path%3Adocs&type=Code).
+As at last count, pkgdown is used [by over 1600
+packages](https://github.com/search?q=pkgdown.css+in%3Apath+path%3Adocs&type=Code).
 
 Here are a few examples created by people contributors to pkgdown:
 

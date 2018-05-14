@@ -25,6 +25,14 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+<!-- docsearch -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+<link href="../docsearch.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+
+
 <meta property="og:title" content="Test case: lists — test-lists" />
 
 <meta property="og:description" content="
@@ -58,11 +66,6 @@ b
 <![endif]-->
 
 
-
-
-<!-- docsearch -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
-
   </head>
 
   <body>
@@ -78,7 +81,7 @@ b
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">pkgdown</a>
-        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.1.0.9000</span>
+        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">1.0.0.9000</span>
       </span>
     </div>
 
@@ -133,7 +136,7 @@ b
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/hadley/pkgdown">
+  <a href="https://github.com/r-lib/pkgdown">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -142,7 +145,7 @@ b
       
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
         </div>
       </form>
       
@@ -157,10 +160,11 @@ b
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Test case: lists</h1>
-    <small>Source: <a href='https://github.com/hadley/pkgdown/blob/master/R/test.R'><code>R/test.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/r-lib/pkgdown/blob/master/R/test.R'><code>R/test.R</code></a></small>
     <div class="hidden name"><code>test-lists.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <ul>
 <li><p>a</p></li>
@@ -182,12 +186,14 @@ b
   <dt>b</dt><dd><p>2</p></dd>
 </dl>
     
+    </div>
 
         
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other tests: <code><a href='test-dont.html'>test-dont</a></code>,
-  <code><a href='test-figures.html'>test-figures</a></code>, <code><a href='test-links.html'>test-links</a></code></p></div>
+  <code><a href='test-figures.html'>test-figures</a></code>, <code><a href='test-links.html'>test-links</a></code>,
+  <code><a href='test-params.html'>test-params</a></code></p></div>
     
 
   </div>
@@ -218,10 +224,16 @@ b
 <script>
   docsearch({
     
+    
     apiKey: 'fbd8d79ed49f21fc9ca7b2cf601a3f5b',
     indexName: 'pkgdown',
     inputSelector: 'input#search-input.form-control',
-    debug: false // Set debug to true if you want to inspect the dropdown
+    transformData: function(hits) {
+      return hits.map(function (hit) {
+        hit.url = updateHitURL(hit);
+        return hit;
+      });
+    }
   });
 </script>
 

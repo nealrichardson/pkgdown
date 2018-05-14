@@ -50,10 +50,6 @@ footer p {
   margin-bottom: 0;
 }
 
-img.icon {
-  float: right;
-}
-
 img {
   max-width: 100%;
 }
@@ -216,4 +212,12 @@ a.sourceLine:hover {
 
 .hasCopyButton:hover button.btn-copy-ex {
   visibility: visible;
+}
+
+/* mark.js ----------------------------*/
+
+mark {
+  background-color: rgba(255, 255, 51, 0.5);
+  border-bottom: 2px solid rgba(255, 153, 51, 0.3);
+  padding: 1px;
 }

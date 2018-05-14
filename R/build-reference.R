@@ -61,7 +61,7 @@
 #' @section Icons:
 #' You can optionally supply an icon for each help topic. To do so, you'll
 #' need a top-level `icons` directory. This should contain {.png} files
-#' that are either 40x40 (for regular display) or 80x80 (if you want
+#' that are either 30x30 (for regular display) or 60x60 (if you want
 #' retina display). Icons are matched to topics by aliases.
 #'
 #' @inheritParams build_articles
@@ -124,7 +124,7 @@ build_reference <- function(pkg = ".",
     # Re-loading pkgdown while it's running causes weird behaviour with
     # the context cache
     if (!(pkg$package %in% c("pkgdown", "rprojroot"))) {
-      pkgload::load_all(pkg$src_path)
+      devtools::load_all(pkg$src_path)
     }
 
     old_dir <- setwd(path(pkg$dst_path, "reference"))
