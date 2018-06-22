@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Build tutorials — build_tutorials • pkgdown</title>
+<title>Build tutorials section — build_tutorials • pkgdown</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -21,27 +21,31 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
 <!-- docsearch -->
+<script src="../docsearch.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 <link href="../docsearch.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
 
-<meta property="og:title" content="Build tutorials — build_tutorials" />
+<meta property="og:title" content="Build tutorials section — build_tutorials" />
 
 <meta property="og:description" content="learnr tutorials must hosted be hosted elsewhere as they require an
 R execution engine. Currently, pkgdown will not build or publish tutorials
-for you, but makes it easy to embed (using &lt;iframe&gt;s) published tutorials.
+for you, but makes it easy to embed (using &amp;lt;iframe&amp;gt;s) published tutorials.
 Tutorials are automatically discovered from published tutorials in
 inst/tutorials and vignettes/tutorials. Alternatively, you can
 list in _pkgdown.yml as described below." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -68,7 +72,7 @@ list in _pkgdown.yml as described below." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">pkgdown</a>
-        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">1.0.0.9000</span>
+        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">1.1.0.9000</span>
       </span>
     </div>
 
@@ -114,6 +118,9 @@ list in _pkgdown.yml as described below." />
     <li>
       <a href="../articles/test/pdf.pdf">Test: PDF (PDF)</a>
     </li>
+    <li>
+      <a href="../articles/test/widget.html">Test: Widgets</a>
+    </li>
   </ul>
 </li>
 <li>
@@ -146,7 +153,7 @@ list in _pkgdown.yml as described below." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Build tutorials</h1>
+    <h1>Build tutorials section</h1>
     <small class="dont-index">Source: <a href='https://github.com/r-lib/pkgdown/blob/master/R/build-tutorials.R'><code>R/build-tutorials.R</code></a></small>
     <div class="hidden name"><code>build_tutorials.Rd</code></div>
     </div>
@@ -216,7 +223,7 @@ section. This should be a list where each element specifies:</p><ul>
 
       <footer>
       <div class="copyright">
-  <p>Developed by <a href='http://hadley.nz'>Hadley Wickham</a>, <a href='https://www.rstudio.com'><img src='http://tidyverse.org/rstudio-logo.svg' alt='RStudio' height='24' /></a>.</p>
+  <p>Developed by <a href='http://hadley.nz'>Hadley Wickham</a>, <a href='https://hesselberthlab.org'>Jay Hesselberth</a>, <a href='https://www.rstudio.com'><img src='https://tidyverse.org/rstudio-logo.svg' alt='RStudio' height='24' /></a>.</p>
 </div>
 
 <div class="pkgdown">

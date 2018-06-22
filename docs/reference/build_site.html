@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Build pkgdown website — build_site • pkgdown</title>
+<title>Build a complete pkgdown website — build_site • pkgdown</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -21,19 +21,22 @@
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
 
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 
 <!-- docsearch -->
+<script src="../docsearch.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 <link href="../docsearch.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
 
-<meta property="og:title" content="Build pkgdown website — build_site" />
+<meta property="og:title" content="Build a complete pkgdown website — build_site" />
 
 <meta property="og:description" content="build_site() is a convenient wrapper around six functions:
 init_site()
@@ -49,6 +52,7 @@ that aspect of the site.
 Note if names of generated files were changed, you will need to use
 clean_site first to clean up orphan files." />
 <meta name="twitter:card" content="summary" />
+
 
 
 <!-- mathjax -->
@@ -75,7 +79,7 @@ clean_site first to clean up orphan files." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">pkgdown</a>
-        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">1.0.0.9000</span>
+        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">1.1.0.9000</span>
       </span>
     </div>
 
@@ -121,6 +125,9 @@ clean_site first to clean up orphan files." />
     <li>
       <a href="../articles/test/pdf.pdf">Test: PDF (PDF)</a>
     </li>
+    <li>
+      <a href="../articles/test/widget.html">Test: Widgets</a>
+    </li>
   </ul>
 </li>
 <li>
@@ -153,7 +160,7 @@ clean_site first to clean up orphan files." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Build pkgdown website</h1>
+    <h1>Build a complete pkgdown website</h1>
     <small class="dont-index">Source: <a href='https://github.com/r-lib/pkgdown/blob/master/R/build.r'><code>R/build.r</code></a></small>
     <div class="hidden name"><code>build_site.Rd</code></div>
     </div>
@@ -176,9 +183,9 @@ that aspect of the site.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>build_site</span>(<span class='kw'>pkg</span> <span class='kw'>=</span> <span class='st'>"."</span>, <span class='kw'>examples</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>run_dont_run</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>seed</span> <span class='kw'>=</span> <span class='fl'>1014</span>, <span class='kw'>mathjax</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>lazy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>override</span> <span class='kw'>=</span> <span class='fu'>list</span>(),
-  <span class='kw'>preview</span> <span class='kw'>=</span> <span class='fl'>NA</span>)</pre>
+    <pre class="usage"><span class='fu'>build_site</span>(<span class='kw'>pkg</span> <span class='kw'>=</span> <span class='st'>"."</span>, <span class='kw'>examples</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>document</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>run_dont_run</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>seed</span> <span class='kw'>=</span> <span class='fl'>1014</span>, <span class='kw'>mathjax</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>lazy</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>override</span> <span class='kw'>=</span> <span class='fu'>list</span>(), <span class='kw'>preview</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>new_process</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -190,6 +197,11 @@ that aspect of the site.</p>
     <tr>
       <th>examples</th>
       <td><p>Run examples?</p></td>
+    </tr>
+    <tr>
+      <th>document</th>
+      <td><p>If <code>TRUE</code>, will run <code><a href='http://www.rdocumentation.org/packages/devtools/topics/document'>devtools::document()</a></code> before
+updating the site.</p></td>
     </tr>
     <tr>
       <th>run_dont_run</th>
@@ -219,6 +231,12 @@ values in <code>_pkgdown.yml</code></p></td>
       <td><p>If <code>TRUE</code>, or <code>is.na(preview) &amp;&amp; interactive()</code>, will preview
 freshly generated section in browser.</p></td>
     </tr>
+    <tr>
+      <th>new_process</th>
+      <td><p>If <code>TRUE</code>, will run <code>build_site()</code> in a separate process.
+This enhances reproducibility by ensuring nothing that you have loaded
+in the current process affects the build process.</p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="yaml-config"><a class="anchor" href="#yaml-config"></a>YAML config</h2>
@@ -231,7 +249,7 @@ freshly generated section in browser.</p></td>
 paths will be taken relative to the package root.</p>
 <p><code>url</code> optionally specifies the url where the site will be published.
 If you supply this, other pkgdown sites will link to your site when needed,
-rather than using generic links to <a href='rdocumentation.org'>rdocumentation.org</a>.</p>
+rather than using generic links to <a href='https://rdocumentation.org'>https://rdocumentation.org</a>.</p>
 <p><code>title</code> overrides the default site title, which is the package name.
 It's used in the page title and default navbar.</p>
 <p>You can also provided information to override the default display of
@@ -242,7 +260,7 @@ text:</p><pre>authors:
     href: http://hadley.nz
   RStudio:
     href: https://www.rstudio.com
-    html: &lt;img src="http://tidyverse.org/rstudio-logo.svg" height="24" /&gt;
+    html: &lt;img src="https://tidyverse.org/rstudio-logo.svg" height="24" /&gt;
 </pre>
     
     <h2 class="hasAnchor" id="development-mode"><a class="anchor" href="#development-mode"></a>Development mode</h2>
@@ -329,7 +347,7 @@ The following YAML snippet illustrates some of the most important features.</p><
 </pre>
     <p>Components can contain sub-<code>menu</code>s with headings (indicated by missing
 <code>href</code>) and separators (indiciated by a bunch of <code>-</code>). You can use <code>icon</code>s
-from fontawesome: see a full list <a href='http://fontawesome.io/icons/'>http://fontawesome.io/icons/</a>.</p>
+from fontawesome: see a full list <a href='https://fontawesome.io/icons/'>https://fontawesome.io/icons/</a>.</p>
 <p>This yaml would override the default "articles" component, eliminate
 the "home" component, and add a new "twitter" component. Unless you
 explicitly mention new components in the <code>structure</code> they'll be added
@@ -371,6 +389,10 @@ correspond to your
 <a href='https://support.google.com/analytics/answer/1032385'>tracking id</a>.</p><pre>template:
   params:
     ganalytics: UA-000000-01
+</pre>
+    <p>Suppress indexing of your pages by web robots by setting <code>noindex: true</code>:</p><pre>template:
+  params:
+    noindex: true
 </pre>
     <p>You can also override the default templates and provide additional
 assets. You can do so by either storing in a <code>package</code> with
@@ -419,7 +441,7 @@ for pkgdown templates to ensure that you use the correct components.</p>
 
       <footer>
       <div class="copyright">
-  <p>Developed by <a href='http://hadley.nz'>Hadley Wickham</a>, <a href='https://www.rstudio.com'><img src='http://tidyverse.org/rstudio-logo.svg' alt='RStudio' height='24' /></a>.</p>
+  <p>Developed by <a href='http://hadley.nz'>Hadley Wickham</a>, <a href='https://hesselberthlab.org'>Jay Hesselberth</a>, <a href='https://www.rstudio.com'><img src='https://tidyverse.org/rstudio-logo.svg' alt='RStudio' height='24' /></a>.</p>
 </div>
 
 <div class="pkgdown">

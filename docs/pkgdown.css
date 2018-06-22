@@ -50,6 +50,10 @@ footer p {
   margin-bottom: 0;
 }
 
+img.icon {
+  float: right;
+}
+
 img {
   max-width: 100%;
 }
@@ -220,4 +224,9 @@ mark {
   background-color: rgba(255, 255, 51, 0.5);
   border-bottom: 2px solid rgba(255, 153, 51, 0.3);
   padding: 1px;
+}
+
+/* vertical spacing after htmlwidgets */
+.html-widget {
+  margin-bottom: 10px;
 }

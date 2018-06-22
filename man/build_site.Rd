@@ -2,16 +2,19 @@
 % Please edit documentation in R/build.r
 \name{build_site}
 \alias{build_site}
-\title{Build pkgdown website}
+\title{Build a complete pkgdown website}
 \usage{
-build_site(pkg = ".", examples = TRUE, run_dont_run = FALSE,
-  seed = 1014, mathjax = TRUE, lazy = FALSE, override = list(),
-  preview = NA)
+build_site(pkg = ".", examples = TRUE, document = TRUE,
+  run_dont_run = FALSE, seed = 1014, mathjax = TRUE, lazy = FALSE,
+  override = list(), preview = NA, new_process = TRUE)
 }
 \arguments{
 \item{pkg}{Path to package.}
 
 \item{examples}{Run examples?}
+
+\item{document}{If \code{TRUE}, will run \code{\link[devtools:document]{devtools::document()}} before
+updating the site.}
 
 \item{run_dont_run}{Run examples that are surrounded in \\dontrun?}
 
@@ -28,6 +31,10 @@ values in \code{_pkgdown.yml}}
 
 \item{preview}{If \code{TRUE}, or \code{is.na(preview) && interactive()}, will preview
 freshly generated section in browser.}
+
+\item{new_process}{If \code{TRUE}, will run \code{build_site()} in a separate process.
+This enhances reproducibility by ensuring nothing that you have loaded
+in the current process affects the build process.}
 }
 \description{
 \code{build_site()} is a convenient wrapper around six functions:
@@ -57,7 +64,7 @@ paths will be taken relative to the package root.
 
 \code{url} optionally specifies the url where the site will be published.
 If you supply this, other pkgdown sites will link to your site when needed,
-rather than using generic links to \url{rdocumentation.org}.
+rather than using generic links to \url{https://rdocumentation.org}.
 
 \code{title} overrides the default site title, which is the package name.
 It's used in the page title and default navbar.
@@ -70,7 +77,7 @@ text:\preformatted{authors:
     href: http://hadley.nz
   RStudio:
     href: https://www.rstudio.com
-    html: <img src="http://tidyverse.org/rstudio-logo.svg" height="24" />
+    html: <img src="https://tidyverse.org/rstudio-logo.svg" height="24" />
 }
 }
 
@@ -169,7 +176,7 @@ The following YAML snippet illustrates some of the most important features.\pref
 
 Components can contain sub-\code{menu}s with headings (indicated by missing
 \code{href}) and separators (indiciated by a bunch of \code{-}). You can use \code{icon}s
-from fontawesome: see a full list \url{http://fontawesome.io/icons/}.
+from fontawesome: see a full list \url{https://fontawesome.io/icons/}.
 
 This yaml would override the default "articles" component, eliminate
 the "home" component, and add a new "twitter" component. Unless you
@@ -217,6 +224,11 @@ correspond to your
 \href{https://support.google.com/analytics/answer/1032385}{tracking id}.\preformatted{template:
   params:
     ganalytics: UA-000000-01
+}
+
+Suppress indexing of your pages by web robots by setting \code{noindex: true}:\preformatted{template:
+  params:
+    noindex: true
 }
 
 You can also override the default templates and provide additional
