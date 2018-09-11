@@ -15,6 +15,7 @@
 <meta property="og:description" content="Generate an attractive and useful website from a source package.
     'pkgdown' converts your documentation, vignettes, 'README', and more to 
     'HTML' making it easy to share information about your package online.">
+<meta property="og:image" content="http://pkgdown.r-lib.org/logo.png">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -119,7 +120,8 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <div id="pkgdown" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#pkgdown" class="anchor"></a>pkgdown</h1></div>
+<a href="#pkgdown" class="anchor"></a>pkgdown <img src="reference/figures/logo.png" align="right">
+</h1></div>
 
 <p>pkgdown is designed to make it quick and easy to build a website for your package. You can see pkgdown in action at <a href="http://pkgdown.r-lib.org" class="uri">http://pkgdown.r-lib.org</a>: this is the output of pkgdown applied to the latest version of pkgdown. Learn more in <code><a href="articles/pkgdown.html">vignette("pkgdown")</a></code> or <code><a href="reference/build_site.html">?build_site</a></code>.</p>
 <div id="installation" class="section level2">
@@ -137,13 +139,13 @@
 <p>Run pkgdown from the package directory each time you release your package:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">pkgdown<span class="op">::</span><span class="kw"><a href="http://pkgdown.r-lib.org/reference/build_site.html">build_site</a></span>()</a></code></pre></div>
 <p>This will generate a <code>docs/</code> directory. The home page will be generated from your package’s <code>README.md</code>, and a function reference will be generated from the documentation in the <code>man/</code> directory. If you are using GitHub, the easiest way to make this your package website is to check into git, then go to settings for your repo and make sure that the <strong>GitHub pages</strong> source is set to “master branch /docs folder”. Be sure to update the URL on your github repository homepage so others can easily navigate to your new site.</p>
-<p>To customise your site, create <code>_pkgdown.yml</code> and modify it <a href="articles/pkgdown.html">as described in the documentation</a>. You can also use <code>pkgdown/_pkgdown.yml</code> if you need other files to customise your site.</p>
+<p>To customise your site, create <code>_pkgdown.yml</code> and modify it <a href="http://pkgdown.r-lib.org/articles/pkgdown.html">as described in the documentation</a>. You can also use <code>pkgdown/_pkgdown.yml</code> if you need other files to customise your site.</p>
 <p>The package includes an RStudio add-in that you can bind to a keyboard shortcut. I recommend <code>Cmd</code> + <code>Shift</code> + <code>W</code>: it uses <code>Cmd</code> + <code>Shift</code>, like all other package development worksheets, it replaces a rarely used command (close all tabs), and the <code>W</code> is a mnemonic for website.</p>
 </div>
 <div id="in-the-wild" class="section level2">
 <h2 class="hasAnchor">
 <a href="#in-the-wild" class="anchor"></a>In the wild</h2>
-<p>As at last count, pkgdown is used <a href="https://github.com/search?o=desc&amp;q=pkgdown.css+in%3Apath+path%3Adocs&amp;s=indexed&amp;type=Code">by over 1800 packages</a>.</p>
+<p>As at last count, pkgdown is used <a href="https://github.com/search?o=desc&amp;q=pkgdown.css+in%3Apath+path%3Adocs&amp;s=indexed&amp;type=Code">by over 2000 packages</a>.</p>
 <p>Here are a few examples created by people contributors to pkgdown:</p>
 <ul>
 <li><p><a href="http://mc-stan.org/bayesplot/index.html">bayesplot</a> [<a href="https://github.com/stan-dev/bayesplot/tree/gh-pages">source</a>]: plotting functions for posterior analysis, model checking, and MCMC diagnostics.</p></li>

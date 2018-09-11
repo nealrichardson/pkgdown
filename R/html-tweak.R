@@ -70,7 +70,18 @@ tweak_md_links <- function(html) {
 tweak_tables <- function(html) {
   # Ensure all tables have class="table"
   table <- xml2::xml_find_all(html, ".//table")
-  xml2::xml_attr(table, "class") <- "table"
+
+  if (length(table) != 0) {
+
+    existing <- xml2::xml_attr(table, "class")
+
+    tweaked <- "table"
+    if (!is.na(existing)) {
+      tweaked <- paste(tweaked, existing)
+    }
+
+    xml2::xml_attr(table, "class") <- tweaked
+  }
 
   invisible()
 }
@@ -153,7 +164,7 @@ find_qualifier <- function(node) {
     return(NA_character_)
   }
 
-  rematch::re_match("([[:alnum:]]+)$", xml2::xml_text(qual))[, 2]
+  rematch2::re_match(xml2::xml_text(qual), "([[:alnum:]]+)$")[[".match"]]
 }
 
 # File level tweaks --------------------------------------------

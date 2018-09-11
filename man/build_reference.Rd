@@ -6,8 +6,8 @@
 \title{Build reference section}
 \usage{
 build_reference(pkg = ".", lazy = TRUE, document = FALSE,
-  examples = TRUE, run_dont_run = FALSE, mathjax = TRUE, seed = 1014,
-  override = list(), preview = NA)
+  examples = TRUE, run_dont_run = FALSE, mathjax = TRUE,
+  seed = 1014, override = list(), preview = NA)
 
 build_reference_index(pkg = ".")
 }
@@ -16,7 +16,7 @@ build_reference_index(pkg = ".")
 
 \item{lazy}{If \code{TRUE}, only rebuild pages where the \code{.Rd}
 is more recent than the \code{.html}. This makes it much easier to
-rapidly protoype. It is set to \code{FALSE} by \code{\link[=build_site]{build_site()}}.}
+rapidly prototype. It is set to \code{FALSE} by \code{\link[=build_site]{build_site()}}.}
 
 \item{document}{If \code{TRUE}, will run \code{\link[devtools:document]{devtools::document()}} before
 updating the site.}
@@ -62,15 +62,14 @@ into two groups:\preformatted{reference:
 Note that \code{contents} can contain either a list of function names, or if the
 functions in a section share a common prefix or suffix, you can use
 \code{starts_with("prefix")} and \code{ends_with("suffix")} to select them all. For
-more complex naming schemes you can use an aribrary regular expression with
+more complex naming schemes you can use an arbitrary regular expression with
 \code{matches("regexp")}. You can also use a leading \code{-} to exclude matches from a
 section. By default, these functions that match multiple topics will exclude
 topics with the Rd keyword "internal". To include these, use
 \code{starts_with("build_", internal = TRUE)}.
 
 You can alo select topics that contain specified Rd concepts with
-\code{has_concept("blah")}. Concepts are not currently well-supported by
-roxygen2, but may be useful if you write Rd files by hand.
+\code{has_concept("blah")}.
 
 You can provide long descriptions for groups of functions using the YAML \code{>}
 notation:\preformatted{desc: >
@@ -90,7 +89,7 @@ this page, and will generate a warning if you have missed any.
 \section{Figures}{
 
 
-You can control the default rendering of figues by specifying the \code{figures}
+You can control the default rendering of figures by specifying the \code{figures}
 field in \code{_pkgdown.yml}. The default settings are equivalent to:\preformatted{figures:
   dev: grDevices::png
   dpi: 96
@@ -111,30 +110,3 @@ either 30x30 (for regular display) or 60x60 (if you want retina display).
 Icons are matched to topics by aliases.
 }
 
-\examples{
-# This example illustrates some important output types
-# The following output should be wrapped over multiple lines
-a <- 1:100
-a
-
-cat("This some text!\\n")
-message("This is a message!")
-warning("This is a warning!")
-
-# This is a multi-line block
-{
-  1 + 2
-  2 + 2
-}
-
-\dontrun{
-stop("This is an error!", call. = FALSE)
-}
-
-\donttest{
-# This code won't generally be run by CRAN. But it
-# will be run by pkgdown
-b <- 10
-a + b
-}
-}

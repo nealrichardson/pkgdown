@@ -27,15 +27,14 @@
 #' Note that `contents` can contain either a list of function names, or if the
 #' functions in a section share a common prefix or suffix, you can use
 #' `starts_with("prefix")` and `ends_with("suffix")` to select them all. For
-#' more complex naming schemes you can use an aribrary regular expression with
+#' more complex naming schemes you can use an arbitrary regular expression with
 #' `matches("regexp")`. You can also use a leading `-` to exclude matches from a
 #' section. By default, these functions that match multiple topics will exclude
 #' topics with the Rd keyword "internal". To include these, use
 #' `starts_with("build_", internal = TRUE)`.
 #'
 #' You can alo select topics that contain specified Rd concepts with
-#' `has_concept("blah")`. Concepts are not currently well-supported by
-#' roxygen2, but may be useful if you write Rd files by hand.
+#' `has_concept("blah")`.
 #'
 #' You can provide long descriptions for groups of functions using the YAML `>`
 #' notation:
@@ -59,7 +58,7 @@
 #'
 #' @section Figures:
 #'
-#' You can control the default rendering of figues by specifying the `figures`
+#' You can control the default rendering of figures by specifying the `figures`
 #' field in `_pkgdown.yml`. The default settings are equivalent to:
 #'
 #' ```
@@ -83,7 +82,7 @@
 #' @inheritParams build_articles
 #' @param lazy If `TRUE`, only rebuild pages where the `.Rd`
 #'   is more recent than the `.html`. This makes it much easier to
-#'   rapidly protoype. It is set to `FALSE` by [build_site()].
+#'   rapidly prototype. It is set to `FALSE` by [build_site()].
 #' @param document If `TRUE`, will run [devtools::document()] before
 #'   updating the site.
 #' @param run_dont_run Run examples that are surrounded in \\dontrun?
@@ -92,32 +91,6 @@
 #' @param seed Seed used to initialize so that random examples are
 #'   reproducible.
 #' @export
-#' @examples
-#' # This example illustrates some important output types
-#' # The following output should be wrapped over multiple lines
-#' a <- 1:100
-#' a
-#'
-#' cat("This some text!\n")
-#' message("This is a message!")
-#' warning("This is a warning!")
-#'
-#' # This is a multi-line block
-#' {
-#'   1 + 2
-#'   2 + 2
-#' }
-#'
-#' \dontrun{
-#' stop("This is an error!", call. = FALSE)
-#' }
-#'
-#' \donttest{
-#' # This code won't generally be run by CRAN. But it
-#' # will be run by pkgdown
-#' b <- 10
-#' a + b
-#' }
 build_reference <- function(pkg = ".",
                             lazy = TRUE,
                             document = FALSE,

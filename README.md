@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# pkgdown
+# pkgdown <img src="man/figures/logo.png" align="right" />
 
 [![Travis-CI Build
 Status](https://travis-ci.org/r-lib/pkgdown.svg?branch=master)](https://travis-ci.org/r-lib/pkgdown)
@@ -41,14 +41,16 @@ This will generate a `docs/` directory. The home page will be generated
 from your package’s `README.md`, and a function reference will be
 generated from the documentation in the `man/` directory. If you are
 using GitHub, the easiest way to make this your package website is to
-check into git, then go settings for your repo and make sure that the
+check into git, then go to settings for your repo and make sure that the
 **GitHub pages** source is set to “master branch /docs folder”. Be sure
 to update the URL on your github repository homepage so others can
 easily navigate to your new site.
 
 To customise your site, create `_pkgdown.yml` and modify it [as
-described in the documentation](articles/pkgdown.html). You can also use
-`pkgdown/_pkgdown.yml` if you need other files to customise your site.
+described in the
+documentation](http://pkgdown.r-lib.org/articles/pkgdown.html). You can
+also use `pkgdown/_pkgdown.yml` if you need other files to customise
+your site.
 
 The package includes an RStudio add-in that you can bind to a keyboard
 shortcut. I recommend `Cmd` + `Shift` + `W`: it uses `Cmd` + `Shift`,
@@ -57,7 +59,7 @@ command (close all tabs), and the `W` is a mnemonic for website.
 
 ## In the wild
 
-As at last count, pkgdown is used [by over 1800
+As at last count, pkgdown is used [by over 2000
 packages](https://github.com/search?o=desc&q=pkgdown.css+in%3Apath+path%3Adocs&s=indexed&type=Code).
 
 Here are a few examples created by people contributors to pkgdown:

@@ -34,7 +34,7 @@ Imports:
     memoise,
     purrr,
     R6,
-    rematch,
+    rematch2,
     rlang (>= 0.2.0),
     rmarkdown (>= 1.1.9007),
     roxygen2,
@@ -57,4 +57,5 @@ Suggests:
 VignetteBuilder: knitr
 SystemRequirements: pandoc
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
+Encoding: UTF-8

@@ -15,6 +15,8 @@ subtract(10, 1)
 \seealso{
 Other tests: \code{\link{test-dont}},
   \code{\link{test-figures}}, \code{\link{test-lists}},
+  \code{\link{test-output-styles}},
   \code{\link{test-params}}
 }
+\concept{tests}
 \keyword{internal}

@@ -43,6 +43,8 @@ found in the root directory of the package. It will generate the home page
 from  index.Rmd or README.Rmd, then index.md or README.md. If none of
 these are found, it falls back to the description field in DESCRIPTION. It
 also builds any files found in .github/." />
+
+<meta property="og:image" content="http://pkgdown.r-lib.org/logo.png" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -167,7 +169,8 @@ also builds any files found in <code>.github/</code>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>build_home</span>(<span class='kw'>pkg</span> <span class='kw'>=</span> <span class='st'>"."</span>, <span class='kw'>override</span> <span class='kw'>=</span> <span class='fu'>list</span>(), <span class='kw'>preview</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>build_home</span>(<span class='kw'>pkg</span> <span class='kw'>=</span> <span class='st'>"."</span>, <span class='kw'>override</span> <span class='kw'>=</span> <span class='fu'>list</span>(), <span class='kw'>preview</span> <span class='kw'>=</span> <span class='fl'>NA</span>,
+  <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -214,7 +217,7 @@ knitr::opts_chunk$set(
     <p>If you have a package logo, you can include it at the top of your README in a
 level-one heading:</p><pre># pkgdown &lt;img src="man/figures/logo.png" align="right" /&gt;
 </pre>
-    <p><code><a href='init_site.html'>init_site()</a></code> will also automaticlly create a favicon.ico from your package
+    <p><code><a href='init_site.html'>init_site()</a></code> will also automatically create a favicon.ico from your package
 logo.</p>
     
     <h2 class="hasAnchor" id="yaml-config-home"><a class="anchor" href="#yaml-config-home"></a>YAML config - home</h2>
@@ -261,6 +264,12 @@ are defined in the <code>DESCRIPTION</code>:</p><pre>person("Jay", "Hesselberth"
 This section is automatically populated if the first paragraph of the
 homepage consists solely of status badges as linked images.</p>
     
+    <h2 class="hasAnchor" id="internet"><a class="anchor" href="#internet"></a>Internet</h2>
+
+    
+    <p>Users with limited internet connectivity can disable CRAN checks by setting
+<code>options(pkgdown.internet = FALSE)</code>.</p>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -279,6 +288,8 @@ homepage consists solely of status badges as linked images.</p>
       <li><a href="#orcid">ORCID</a></li>
 
       <li><a href="#badges">Badges</a></li>
+
+      <li><a href="#internet">Internet</a></li>
           </ul>
 
   </div>
