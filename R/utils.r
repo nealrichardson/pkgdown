@@ -79,7 +79,6 @@ devtools_meta <- function(x) {
   ns[[".__DEVTOOLS__"]]
 }
 
-
 # CLI ---------------------------------------------------------------------
 
 dst_path <- function(...) {
@@ -115,4 +114,10 @@ skip_if_no_pandoc <- function() {
 
 has_internet <- function() {
   return(getOption("pkgdown.internet", default = TRUE))
+}
+
+with_dir <- function(new, code) {
+  old <- setwd(dir = new)
+  on.exit(setwd(old))
+  force(code)
 }

@@ -1,21 +1,23 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# pkgdown <img src="man/figures/logo.png" align="right" />
+# pkgdown <img src="man/figures/logo.png" align="right" alt="" width="120" />
 
-[![Travis-CI Build
-Status](https://travis-ci.org/r-lib/pkgdown.svg?branch=master)](https://travis-ci.org/r-lib/pkgdown)
+[![Travis-CI build
+status](https://travis-ci.org/r-lib/pkgdown.svg?branch=master)](https://travis-ci.org/r-lib/pkgdown)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/r-lib/pkgdown?branch=master&svg=true)](https://ci.appveyor.com/project/r-lib/pkgdown)
-[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/pkgdown)](https://cran.r-project.org/package=pkgdown)
-[![Coverage
-Status](https://img.shields.io/codecov/c/github/r-lib/pkgdown/master.svg)](https://codecov.io/github/r-lib/pkgdown?branch=master)
+[![Lifecycle:
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![CRAN
+Status](https://www.r-pkg.org/badges/version/pkgdown)](https://cran.r-project.org/package=pkgdown)
+[![Codecov test
+coverage](https://img.shields.io/codecov/c/github/r-lib/pkgdown/master.svg)](https://codecov.io/github/r-lib/pkgdown?branch=master)
 
 pkgdown is designed to make it quick and easy to build a website for
 your package. You can see pkgdown in action at
-<http://pkgdown.r-lib.org>: this is the output of pkgdown applied to the
-latest version of pkgdown. Learn more in `vignette("pkgdown")` or
+<https://pkgdown.r-lib.org>: this is the output of pkgdown applied to
+the latest version of pkgdown. Learn more in `vignette("pkgdown")` or
 `?build_site`.
 
 ## Installation
@@ -54,15 +56,15 @@ your site.
 
 The package includes an RStudio add-in that you can bind to a keyboard
 shortcut. I recommend `Cmd` + `Shift` + `W`: it uses `Cmd` + `Shift`,
-like all other package development worksheets, it replaces a rarely used
+like all other package development shortcuts, it replaces a rarely used
 command (close all tabs), and the `W` is a mnemonic for website.
 
 ## In the wild
 
-As at last count, pkgdown is used [by over 2000
+At last count, pkgdown is used [by over 2500
 packages](https://github.com/search?o=desc&q=pkgdown.css+in%3Apath+path%3Adocs&s=indexed&type=Code).
 
-Here are a few examples created by people contributors to pkgdown:
+Here are a few examples created by contributors to pkgdown:
 
   - [bayesplot](http://mc-stan.org/bayesplot/index.html)
     \[[source](https://github.com/stan-dev/bayesplot/tree/gh-pages)\]:
@@ -87,5 +89,5 @@ new pkgdown techniques.
 ## Code of conduct
 
 Please note that this project is released with a [Contributor Code of
-Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree
-to abide by its terms.
+Conduct](.github/CODE_OF_CONDUCT.md). By participating in this project
+you agree to abide by its terms.
